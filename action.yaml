@@ -1,0 +1,13 @@
+name: 'IAC Parser'
+description: 'Parse GitHub repository with Sysdig IAC Parser'
+inputs:
+  repository:
+    description: 'Repository to be parsed'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.parser }}
+    - ${{ inputs.repository }}
