@@ -4,18 +4,18 @@ This action scans your repository with Sysdig IAC Scanner and generates an outpu
 
 ## Inputs
 
-### `Parser`
-**Requiered** The name of the parser to be used in the scanner. Must be a string from the following list:
+### Parser    
+> **Requiered** The name of the parser to be used in the scanner. Must be a string from the following list:
 - tf-state
 - tf-file
 - tf-module
 - cloudformation
 - crossplane
-- pulumi-goa
+- pulumi-go
 
 ## Outputs
-### `Scanner-output`
-Output generated after running IAC Scanner.
+### Scanner-output
+> Output generated after running IAC Scanner.
 
 ## Example usage
 ```
