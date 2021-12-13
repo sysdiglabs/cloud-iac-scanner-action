@@ -1,0 +1,16 @@
+name: 'IAC Parser'
+description: 'Parse GitHub repository with Sysdig IAC Parser'
+inputs:
+  parser:
+    description: 'Parser to be used "tf-state, tf-file, tf-module, cloudformation, crossplane or pulumi-go"'
+    required: true
+
+outputs:
+  scanner-output:
+    description: 'Result after scanning the repository'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.parser }}
