@@ -2,7 +2,7 @@ name: 'IAC Parser'
 description: 'Parse GitHub repository with Sysdig IAC Parser'
 inputs:
   parser:
-    description: 'Parser to be used "tf-state, tf-file, tf-module, cloudformation, crossplane or pulumi-go"'
+    description: 'Parser to be used "terraform-state, terraform or cloudformation"'
     required: true
 
 outputs:
