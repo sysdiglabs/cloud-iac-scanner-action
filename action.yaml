@@ -6,7 +6,18 @@ inputs:
     required: true
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.parser }}
+  using: 'composite'
+  steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+    - name: Build docker image
+      shell: bash
+      run: docker build -t sysdiglabs/cloud-iac-scanner -f ./Dockerfile .
+    - name: Run IaC Scanner
+      shell: bash
+      run: docker run sysdiglabs/cloud-iac-scanner:latest ${{github.event.inputs.parser}}
+      id: run_iac_scanner
+    - name: Print output
+      shell: bash
+      run: |
+        echo ${{steps.run_iac_scanner.outputs.scanner-output}} | while read line; do echo "$line"; done
