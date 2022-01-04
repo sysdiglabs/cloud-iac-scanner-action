@@ -40,5 +40,5 @@ jobs:
         password: ${{ secrets.SYSDIGLABS_DOCKERHUB_TOKEN }}
         repository: ${{ env.GITHUB_REPOSITORY }}
         add_git_labels: true
-        dockerfile: build/Dockerfile
+        dockerfile: Dockerfile
         tags: latest, ${{ steps.tag.outputs.VERSION }}
