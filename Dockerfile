@@ -1,4 +1,4 @@
-FROM ghcr.io/sysdiglabs/cloud-iac-scanner:pr-7
+FROM sysdiglabs/cloud-iac-scanner:master
 
 COPY entrypoint.sh /entrypoint.sh
 
