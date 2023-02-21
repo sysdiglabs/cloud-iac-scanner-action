@@ -1,3 +1,4 @@
+⚠️⚠️DEPRECATED⚠️⚠️
 # Sysdig IAC Scanner Action 
 
 This action scans your repository with Sysdig IAC Scanner and generates an output with the vulnerabilities.  
